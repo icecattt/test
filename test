@@ -1,4 +1,4 @@
-hostname = v.qq.com, yangkeduo.com, bankcomm.com, jxedt.com, jd.com, weibo.com, zhihu.com, bilibili.com, trade-acs.m.taobao.com, api.m.jd.com, p.du.163.com, taobao.com, alicdn.com, amap.com, dangdang.com, douyucdn.cn, 
+hostname = v.qq.com, yangkeduo.com, bankcomm.com, jxedt.com, jd.com, weibo.com, zhihu.com, bilibili.com, trade-acs.m.taobao.com, api.m.jd.com, 163.com, taobao.com, alicdn.com, amap.com, dangdang.com, douyucdn.cn, 
 
 # >> 腾讯视频
 ^https?+:\/\/vv\.video\.qq\.com\/getvmind\? url reject-200
