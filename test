@@ -1,4 +1,19 @@
-hostname = weibo.com, zhihu.com, bilibili.com, trade-acs.m.taobao.com, api.m.jd.com, p.du.163.com,
+hostname = v.qq.com, yangkeduo.com, bankcomm.com, jxedt.com, jd.com, weibo.com, zhihu.com, bilibili.com, trade-acs.m.taobao.com, api.m.jd.com, p.du.163.com, taobao.com, alicdn.com, amap.com, dangdang.com, douyucdn.cn, 
+
+# >> 腾讯视频
+^https?+:\/\/vv\.video\.qq\.com\/getvmind\? url reject-200
+^https?+:\/\/(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/.+?\.tc\.qq\.com\/.+?p201\.1\.mp4\? url reject-200
+
+# > 拼多多
+^https?+:\/\/api\.yangkeduo\.com\/api\/cappuccino\/splash url reject-200
+
+# > 买单吧
+^https?+:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/queryGuidePageAds\.do$ url reject-200
+^https?+:\/\/creditcardapp\.bankcomm\.com\/mapp\/common\/getPopAds\.do$ url reject-200
+
+# > 驾校一点通
+^https?+:\/\/api\.jxedt\.com\/ad\/ url reject-200
+^https?+:\/\/richmanapi\.jxedt\.com\/api\/ad\/ url reject-200
 
 # 去微博应用内广告 (By yichahucha)
 ^https?://(sdk|wb)app.uve.weibo.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
@@ -27,8 +42,32 @@ https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom\?access_key 
 ^https?://p\.du\.163\.com/readtime/info.json url reject
 ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wnyd.js
 
+# >> 高德地图
+^https?+:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/ url reject-200
+
+# > 斗鱼
+^https?+:\/\/rtbapi\.douyucdn\.cn\/japi\/sign\/app\/getinfo url reject-200
+
+# > 当当
+^https?+:\/\/mapi\.dangdang\.com\/index\.php\?action=init url reject-200
+^https?+:\/\/e\.dangdang\.com\/.+?getDeviceStartPage url reject-200
+
 # 京东比价
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+
+# > 京东
+^https?+:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$ url reject-200
+^https?+:\/\/b?dsp-x\.jd\.com\/adx\/ url reject-200
+^https?+:\/\/ms\.jr\.jd\.com\/gw\/generic\/base\/na\/m\/adInfo url reject-200
+^https?+:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/na\/m\/getLoadingPicture url reject-200
+
+# >> 飞猪
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/ url reject-200
+
+# >> 淘宝
+^https?+:\/\/(?>heic|gw)\.alicdn\.com\/tfs\/TB1.+?-\d{4}-\d{4}\.jpg_1200x1200q90\.jpg_\.\w{3,4}+$ url reject-200
+^https?+:\/\/heic\.alicdn\.com\/tps\/i4\/.+?\.jpg_1200x1200q90\.jpg_\.heic$ url reject-200
+^https?+:\/\/gw\.alicdn\.com\/tfs\/.+?\d{4}-\d{4}\/[a-z]{3}$ url reject-200
 
 # 淘宝比价
 ^http://.+/amdc/mobileDispatch url script-request-body https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
